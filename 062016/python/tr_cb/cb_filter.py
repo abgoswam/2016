@@ -9,7 +9,7 @@ import csv
 
 filename = r'E:\hackerreborn\2016\062016\_resources\TrDataExtendedSchema\JoinedInputBrandon.tsv'
 
-columns = ['time', 'camp_id', 'offer_id', 'lp_id', 'click_lead', 'click_leadvalue']
+columns = ['row', 'time', 'camp_id', 'offer_id', 'lp_id', 'click_lead', 'click_leadvalue']
 print '\t'.join(columns)
 
 with open(filename, 'rb') as f:    
