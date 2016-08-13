@@ -6,6 +6,7 @@ Created on Wed Jun 08 10:24:01 2016
 """
 import time
 import datetime
+import numpy as np
 
 def fibB(n):
     if n==0 or n==1:
@@ -27,26 +28,29 @@ def fibI(n):
         
     return fibValues[-1]
 
+#as per normal convention, here is what i am following:
+#    F_0 = 0
+#    F_1 = 1
+#    F_2 = 1
+#    F_3 = 2
 
+def fibIA(n):
+    if n==0 or n==1:
+        return n
+        
+    arr = np.empty(n+1, dtype=int)
+    arr[0] = 0
+    arr[1] = 1
     
+    for i in range(2, n+1):
+        arr[i] = arr[i-1] + arr[i-2]
+    
+    return arr[n]
+
 if __name__ == "__main__":
-    start = datetime.time()    
-    print fibB(35)
-    end = datetime.time()
-    print "Time for fibB : {0}".format(end - start)
-    
-    start = datetime.time()    
-    print fibBG(35)
-    end = datetime.time()
-    print "Time for fibBG : {0}".format(end - start)
-#    
-    start = datetime.time()    
-    print fibI(35)
-    end = datetime.time()
-    print "Time for fibI : {0}".format(end - start)
-    
-#    for i in range(40):
-#        print i, fibB(i)
+
+    for i in range(25):
+        print i, fibB(i)
 #        
 #    print "------------"
 #
@@ -57,3 +61,10 @@ if __name__ == "__main__":
 #    
 #    for i in range(40):
 #        print i, fibI(i)
+
+    print "------------"
+    
+    for i in range(25):    
+        print i, fibIA(i)    
+    
+    
