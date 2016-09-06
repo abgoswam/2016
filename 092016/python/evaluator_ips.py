@@ -33,6 +33,7 @@ Example:
 """
 
 import sys
+import math
 
 if len(sys.argv) != 3:
     print "Error in passing arguments. example : python evaluator_ips.py [Observation File] [Scoring File]"
@@ -55,7 +56,8 @@ with open(observation_filename, 'rb') as f_obs, \
         
     total_observations = 0
     matching_observations = 0
-    propensity_sum = 0.0
+    sum_ips = 0.0
+    sum_ipssquared = 0.0
     
     for obs, scored in zip(obs_linesnonempty, scoring_linesnonempty):
         total_observations += 1
@@ -73,11 +75,22 @@ with open(observation_filename, 'rb') as f_obs, \
             raise ValueError('Incorrect format in [Scoring File]. scored_action is empty. ' + 'scoring line : ' + scored)
         
         if scored_action == obs_action:
-            matching_observations += 1
-            propensity_sum += float(obs_reward) / float(obs_probability)
+            matching_observations += 1        
+            ips = float(obs_reward) / float(obs_probability)
+            sum_ips += ips
+            sum_ipssquared += (ips * ips)
 
+#Computing some statistical measures
+expectation_ips         = sum_ips / total_observations
+expectation_ipssquared  = sum_ipssquared / total_observations
+variance_ips            = expectation_ipssquared -  (expectation_ips * expectation_ips)
+standarddeviation_ips   = math.sqrt(variance_ips)
+standarderror_ips       = standarddeviation_ips / math.sqrt(total_observations)
+errormargin_95ci        = (1.96) * standarderror_ips
 
 print "Total Observations : {0}".format(total_observations)
 print "Matching Observations : {0}".format(matching_observations)
-print "IPS Estimate : {0}".format(propensity_sum / total_observations)
+print "IPS Estimate : {0}".format(expectation_ips)
+print "Std Dev : {0}".format(standarddeviation_ips)
+print "95% CI : ({0}, {1})".format((expectation_ips - errormargin_95ci), (expectation_ips + errormargin_95ci))
         
