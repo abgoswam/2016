@@ -78,12 +78,12 @@ ax1.set_ylim(0, 0.003)
 plt.ylabel('conversion rate')
 plt.grid(True)
 
-#width = 0.15
-#ind = np.arange(len(df_analysis['mab_convrate']))
-#plt.bar(ind, df_analysis['mab_convrate'].values, width, color='r')
-#plt.bar(ind + width, df_analysis['cb_convrate'].values, width, color='y')
-#plt.bar(ind + 2*width, df_analysis['vw_convrate'].values, width, color='b')
-#plt.bar(ind + 3*width, df_analysis['tlc_convrate'].values, width, color='g')
+#width = 0.10
+#ind = np.arange(len(df_analysis['MAB']))
+#plt.bar(ind, df_analysis['MAB'].values, width, color='r')
+#plt.bar(ind + width, df_analysis['CB'].values, width, color='y')
+#plt.bar(ind + 2*width, df_analysis['VW'].values, width, color='b')
+#plt.bar(ind + 3*width, df_analysis['TLC'].values, width, color='g')
 #plt.show()
 
 
