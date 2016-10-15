@@ -25,10 +25,18 @@ rects1 = ax.bar(ind, ips, width, color='y', yerr=[ips_lowerbar, ips_upperbar])
 
 ax.set_ylim([0.025,0.055])
 ax.set_ylabel('IPS Estimates')
-ax.set_title('IPS Estimates for different policies. Date: 20090503')
+ax.set_title('IPS Estimates for different policies. 20090503')
 ax.set_xticks(ind + width/2)
-ax.set_xticklabels(('Random Policy', 'Multi Armed Bandit', 'MWT without CTR', 'MWT with CTR', 'MWT with CTR (-q ::)'),
-                   rotation=90)
+#ax.set_xticklabels(('Random Policy', 'Multi Armed Bandit', 'MWT without CTR', 'MWT with CTR', 'MWT with CTR (-q ::)'),
+#                   rotation=90)
+
+ax.set_xticklabels(('Random Policy',
+                    'Multi Armed Bandit',
+                    'MWT without CTR',
+                    'MWT with CTR',
+                    'MWT with CTR (lambda: 0.5,initial_t: 0, decay_learningrate : 0.75, power_t: 0)','MWT with CTR (lambda: 0.5,initial_t: 0, decay_learningrate : 0.75, power_t: 0.5)','MWT with CTR (lambda: 0.5,initial_t: 0, decay_learningrate : 1, power_t: 0)','MWT with CTR (lambda: 0.5,initial_t: 0, decay_learningrate : 1, power_t: 0.5)','MWT with CTR (lambda: 0.5,initial_t: 0.5, decay_learningrate : 0.75, power_t: 0)','MWT with CTR (lambda: 0.5,initial_t: 0.5, decay_learningrate : 0.75, power_t: 0.5)','MWT with CTR (lambda: 0.5,initial_t: 0.5, decay_learningrate : 1, power_t: 0)','MWT with CTR (lambda: 0.5,initial_t: 0.5, decay_learningrate : 1, power_t: 0.5)','MWT with CTR (lambda: 1,initial_t: 0, decay_learningrate : 0.75, power_t: 0)','MWT with CTR (lambda: 1,initial_t: 0, decay_learningrate : 0.75, power_t: 0.5)','MWT with CTR (lambda: 1,initial_t: 0, decay_learningrate : 1, power_t: 0)','MWT with CTR (lambda: 1,initial_t: 0, decay_learningrate : 1, power_t: 0.5)','MWT with CTR (lambda: 1,initial_t: 0.5, decay_learningrate : 0.75, power_t: 0)','MWT with CTR (lambda: 1,initial_t: 0.5, decay_learningrate : 0.75, power_t: 0.5)','MWT with CTR (lambda: 1,initial_t: 0.5, decay_learningrate : 1, power_t: 0)','MWT with CTR (lambda: 1,initial_t: 0.5, decay_learningrate : 1, power_t: 0.5)','MWT with CTR (-q ::)',
+                    'Decision Tree'),
+                    rotation=90)
 
 #plt.grid()
 ax.axhline(y=df[df['Sweep Info'] == 'Multi Armed Bandit'].lowerrorinterval.iloc[0], 
@@ -41,4 +49,4 @@ ax.axhline(y=df[df['Sweep Info'] == 'Multi Armed Bandit'].uppererrorinterval.ilo
            color='r')
 #ax.set_aspect('equal', adjustable='box') 
 #plt.show()
-plt.savefig('20090503.jpeg', bbox_inches='tight')
+plt.savefig('20090503.pdf', bbox_inches='tight')
