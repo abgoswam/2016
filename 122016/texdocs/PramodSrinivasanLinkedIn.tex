@@ -1,0 +1,230 @@
+\documentclass[resmargin,line]{res}
+\usepackage{enumitem}
+\usepackage{setspace}                                    % Allows for custom margins, etc.
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{fullpage}                                    % Use the full page
+\usepackage[latin9]{inputenc}                            % Font definition and input type
+\usepackage[T1]{fontenc}                                 % Font output type 
+\usepackage{mmap}                                        % Allows glyphs (e.g. ff) to copy properly (ASCII)
+\usepackage{textcomp}                                    % Supports many symbols such as copyright
+\usepackage{color}                                       % Allow for colored text, etc.
+\usepackage[]{hyperref}                                  % Allow hyperlinks (internal and external)
+\hypersetup{                                             % Custom hyperlink settings
+    pdffitwindow=false,                                  % Window fit to page when opened
+    pdfstartview={XYZ null null 1.00},                   % Fits the zoom of the page to 100%
+    pdfnewwindow=true,                                   % Links in new window
+    colorlinks=true,                                     % false: boxed links; true: colored links
+    linkcolor=black,                                     % Color of internal links (black is necessary for printing quality)
+    citecolor=black,                                     % Color of links to bibliography
+    urlcolor=black,                                      % Color of external links
+    pdfauthor = {Abhishek Goswami},
+    pdfkeywords = {},
+    pdftitle = {Abhishek Goswami: Resume},
+    pdfsubject = {Resume},
+    pdfpagemode = UseNone}
+
+\reversemarginpar    
+\oddsidemargin -0.4in
+\evensidemargin -0.4in
+\textwidth=6.3in
+\itemsep=0in
+\parsep=0in
+% if using pdflatex:
+\setlength{\pdfpagewidth}{\paperwidth}
+\setlength{\pdfpageheight}{\paperheight}
+
+	\addtolength{\topmargin}{-0.1in}
+	\addtolength{\textheight}{0.6in} 
+
+
+
+\newenvironment{list1}{
+  \begin{list}{\ding{113}}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+  \begin{list}{$\bullet$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.2in}}}{\end{list}}
+      
+\usepackage{datetime}                                    % Custom date format for date field
+\newdateformat{mydate}{\monthname[\THEMONTH] \THEYEAR}   % Defining month year date format
+
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage{setspace}
+\usepackage{fancyhdr}                                    % Used for custom page headers
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt} 
+\rhead{\footnotesize \thepage} %header at the right
+\headsep = 0.5cm
+% FIRST PAGE ONLY (redefine the plain pagestyle)
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} 
+\headsep = 0.0cm
+\rhead{}
+}
+
+\newcommand{\changeurlcolor}[1]{\hypersetup{urlcolor=#1}}       
+%\usepackage[bottom=0.5in,top=0.8in]{geometry}
+%\usepackage[top=0.8in,left=0.5in,right=1.7in,bottom=0in]{geometry}
+
+\usepackage[paper=letterpaper,
+            marginparwidth=5mm,       % Length of section titles
+            marginparsep=0.1mm,       % Space between titles and text
+            margin=20mm,              % margins
+            %includemp,
+      noheadfoot,
+      top=0.8in,left=0.5in,right=1.4in,bottom=0in,
+      pdftex
+            ]{geometry}
+
+
+\def \address{\hspace*{-2.8cm}  Urbana\\  \hspace*{-2.8cm}  \changeurlcolor{blue}\href{https://github.com/domarps}{Portfolio Website}}
+\def \author{\hspace*{-2.8cm} \textbf{{Abhishek Goswami}}}
+\def \email{\href{mailto:psrnvsn2@illinois.edu}{psrnvsn2@illinois.edu}}
+\def \phnum{(+1)217-904-3372}
+
+\begin{document}
+
+\vspace*{-1.45cm}
+%\name{Vipul Venkataraman}
+% \begin{center}
+% \hspace{-2cm}{\large\bf Abhishek Goswami}\\
+% % \vspace{0.2cm}\hspace{-2cm}106 S Gregory St., Apt 10\\
+% % \hspace{-2cm}Urbana, IL 61801\\
+% % \hspace{-2cm}\href{http://web.engr.illinois.edu/~vvnktrm2}{web.engr.illinois.edu/$\sim$vvnktrm2}
+% \end{center}
+
+%\begin{resume}
+\begin{tabular} {
+  p{\textwidth/3-\marginparwidth+2mm}
+  p{\textwidth/3-\marginparwidth+2mm}
+  p{\textwidth/3-\marginparwidth+2mm}}
+  \begin{flushleft}
+     \address
+  \end{flushleft}
+  &
+  \begin{center}
+  \normalsize{\author}
+  \end{center}
+  &
+  \begin{flushright}
+    {\phnum}
+      {\email}   
+  \end{flushright}
+\end{tabular}
+
+% \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.2pt}}
+
+\thispagestyle{plain} % to use first page footer
+
+\section{\sc Education}
+\begin{enumerate}[leftmargin=0.12cm, itemsep=2pt]
+\item[] \textbf{University of Illinois at Urbana-Champaign}\hfill {{May 2017}} \\
+ Master of Science, Computer Science \hfill {\textbf{GPA : 3.81/4.0}}
+
+\item[] \textbf{Birla Institute of Technology and Science Pilani,Pilani Campus} \hfill {{June 2014}} \\
+ Bachelor of Engineering (Hons.) in Electrical and Electronics \hfill {\textbf{GPA : 9.64/10.0}}
+ \end{enumerate}
+
+
+% \begin{list1}
+% \item[] \textbf{Indian Institute of Technology Bombay} \hfill \textbf{2011-15}\\
+% \emph{B.Tech in Computer Science and Engineering} \\
+% CGPA : 8.77/10.00
+% \vspace*{.1in}
+% \item[] \textbf{Higher Secondary Examination (CBSE, India)} \hfill \textbf{May 2011} \\
+% Maharishi Vidya Mandir, Chennai, 95.8\% 
+% \vspace*{.1in}
+% \item[] \textbf{Matriculation (CBSE, India)} \hfill \textbf{May 2009} \\
+% DAV Senior Secondary School, Chennai, 97.6\%
+% \end{list1}
+
+% \section{\sc Publications}
+% \begin{list1}
+%  \item[] R. S. Roy, A. Padmakumar, \textbf{G. P. Jeganathan}, and P. Kumaraguru, \emph{Automated Linguistic Personalization of Targeted Marketing Messages Mining User-Generated Text on Social Media}. Computational Linguistics and Intelligent Text Processing - 16th International Conference (CICLing 2015): 203-224 \textbf{[Best Paper Award]}
+%  \end{list1}
+%  \section{\sc Patents}
+% \begin{list1}
+%  \item[]R. S. Roy,  \textbf{G. P. Jeganathan}, A. Padmakumar, and P. Kumaraguru, \emph{Linguistic Personalization of Messages for Targeted Campaigns}, USPTO Application No. 14/566,181 (Patent pending).
+% \end{list1}
+
+% Can be removed
+
+\section{\sc Projects}
+\begin{enumerate}[leftmargin=0.05cm, itemsep=2pt]
+\item[] \textbf{Deepest Learning for Visual Question Answering} \hfill Fall 2015\\
+Implemented Recurrent Neural network algorithms to answer natural language questions based on images; further established the sensititvity of existing models to small perturbations to these questions.
+\item[] \textbf{Identification of online auction bids placed by robots} \hfill Fall 2015\\
+Built predictive models using Random Forests and Bagged SVM with hyperparameter optimization to detect bids placed by robots; improved the accuracy through feature engineering; obtained AUC of 0.94247
+\item[] \textbf{Large Scale Parallel Recommender System Framework} \hfill Spring 2015\\
+Explored various collaborative filtering methods and extended the features of the \textit{Julia RecSys} package to process massive datasets such as \textit{Netflix, jester} and \textit{lastFM}.
+\item[] \textbf{Relationship Prediction in Heterogenous Networks} \hfill Spring 2016 \\
+Enhancing link prediction in online social networks using similarity techniques such as Predictive Text Embedding(PTE).
+\end{enumerate}
+
+\section{\sc Experience}
+\begin{enumerate}[leftmargin=0.12cm, itemsep=2pt]
+\item[] \textbf{Intel Labs,Bangalore India }  \hfill Dec 2014 - July 2015 \\
+\textit{Design Engineer}
+\begin{itemize}[noitemsep]
+  \item Developed and optimized mode transition mechanisms for subsystem modeling % fixed various bugs in the system model
+  \item Restructured the code base; improved the data manipulation framework resulting in a 2x speedup
+\end{itemize}
+\item[] \textbf{NVIDIA Corporation, Bangalore India } \hfill June 2014 - Dec 2014 \\
+\textit{Architect,GPU Memory}
+\begin{itemize}[noitemsep]
+  \item Analyzed failure modes and devised strategies to resolve unit-level issues of the memory subsystem
+  \item Built a flexible test bed to identify anomalies with theory model development; \textit{mentored 2 interns}
+\end{itemize}
+\item[] \textbf{NVIDIA Corporation, Bangalore India }  \hfill Jan 2014 - June 2014 \\
+\textit{Software Engineering Intern}
+\begin{itemize}[noitemsep]
+  \item Implemented C++ models and wrote test suites to study performance analysis of the memory controller
+  \item Gained exposure to environment setup and infrastructure automation.
+\end{itemize}
+\item[] \textbf{Carleton University, Ottawa, Canada}  \hfill May 2013 - Aug. 2013 \\
+\textit{Visiting Scholar, Computer-Aided Engineering Research Lab}
+\begin{itemize}[noitemsep]
+  \item Worked on parallel and scalable Design Automation tools to facilitate system modeling and optimization.
+  \item Developed efficient, numerical algorithms and associated software for circuit simulation
+\end{itemize}
+\end{enumerate}
+
+
+
+
+\renewcommand\labelitemi{{\boldmath$\cdot$}}
+
+\section{\sc Scholastic Honors}
+\begin{itemize}[leftmargin=0.12cm, itemsep=0pt]
+\item[] \textbf{Best Graduating Student Award}, Electrical and Electronics Engineering Department, BITS-Pilani
+\item[] \textbf{Institute Merit Scholarship, BITS-Pilani} for academic excellence
+\item[] \textbf{2013 MITACS Globalink Scholarship} for summer research-assistantship in Canada.
+\item[] \textbf{Best Paper Award} at the IEEE Conference,EDCAV-2015
+\end{itemize}
+
+
+
+\renewcommand\labelitemi{{\boldmath$\cdot$}}
+\section{\sc Competitive Programming}
+\begin{itemize}[leftmargin=0.12cm, itemsep=0pt]
+\item[] \textbf{Kaggle competition: Third Place} in the overall leaderboard in the `Human or Robot?' Kaggle competition by Facebook as part of the Data Mining course project, in Fall 2015
+\item[] \textbf{ACM ICPC}: qualified for the 2015 Mid-central regional rounds by coming within top 6 teams at UIUC
+\end{itemize}
+
+\section{\sc Technical Skills}
+\begin{enumerate}[leftmargin=0.12cm, noitemsep]
+\item[] \textbf{Languages} : [\textit{Proficient}] C, C++, Python, Shell, MATLAB  \hfill [\textit{Competent}] Julia, Java, Perl
+\item[] \textbf{Miscellaneous} : scikit-learn, weka, Spark, Hadoop, Pig, YARN, Flume, \LaTeX
+\end{enumerate}
+%\end{resume}
+\end{document}
