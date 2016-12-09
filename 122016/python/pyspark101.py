@@ -11,6 +11,9 @@ import sys
 # Path for spark source folder
 os.environ['SPARK_HOME']="/usr/local/spark/spark-2.0.1-bin-hadoop2.7"
 
+#if we want to use python 3
+#os.environ["PYSPARK_PYTHON"]="/usr/bin/python3"
+
 # Append pyspark  to Python Path
 sys.path.append("/usr/local/spark/spark-2.0.1-bin-hadoop2.7/python")
 
@@ -41,12 +44,13 @@ spark = pyspark.sql.SparkSession.builder\
         .master("local[*]")\
         .appName("trial app 1")\
         .getOrCreate()
- 
+
 dataPath = "/home/abgoswam/hackerreborn/2016/122016/python/parkinsons_updrs.csv"
 diamonds = spark.read.format("csv")\
   .option("header","true")\
   .option("inferSchema", "true")\
   .load(dataPath)
-  
+
 diamonds.show()
+
 #sc.stop()
